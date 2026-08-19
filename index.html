@@ -85,7 +85,9 @@
           </div>
         </div>
         <div class="hero-avatar">
-          <img src="profile.jpg" alt="Gustavo Gaeta" loading="lazy">
+          <div class="hero-avatar-wrapper">
+            <img src="profile2-removebg-preview.png"Gustavo Gaeta" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="hero__scroll">
@@ -161,10 +163,8 @@
     <section class="scene scene--explore" id="scene-2">
       <div class="container">
         <div class="scene__label">EXPLORE</div>
-        <div class="bento-grid" id="explore-grid">
-          <!-- Asymmetric 12-col bento layout with SVGs -->
-          <div class="bento-tile bento-tile--span-2" data-subject="matematica">
-            <div class="bento-tile__bg"></div>
+        <div class="bento-grid">
+          <div class="bento-tile bento-tile--col-3" data-subject="matematica">
             <div class="bento-tile__emoji">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <path d="M4 19l16-14M4 5l16 14"></path>
@@ -176,7 +176,7 @@
               <p class="bento-tile__desc">Álgebra, Funções e Cálculo Aplicado.</p>
             </div>
           </div>
-          <div class="bento-tile" data-subject="natureza">
+          <div class="bento-tile bento-tile--col-3" data-subject="natureza">
             <div class="bento-tile__emoji">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
@@ -188,7 +188,7 @@
               <p class="bento-tile__desc">Física, Química e Biologia.</p>
             </div>
           </div>
-          <div class="bento-tile bento-tile--span-2" data-subject="linguagens">
+          <div class="bento-tile bento-tile--col-3" data-subject="linguagens">
             <div class="bento-tile__emoji">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -200,7 +200,7 @@
               <p class="bento-tile__desc">Português, Literatura e Artes.</p>
             </div>
           </div>
-          <div class="bento-tile" data-subject="humanas">
+          <div class="bento-tile bento-tile--col-3" data-subject="humanas">
             <div class="bento-tile__emoji">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -214,7 +214,35 @@
               <p class="bento-tile__desc">História, Geografia e Filosofia.</p>
             </div>
           </div>
-          <div class="bento-tile" data-subject="iot">
+          <div class="bento-tile bento-tile--col-4" data-subject="modelagem">
+            <div class="bento-tile__emoji">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+            </div>
+            <div class="bento-tile__info">
+              <span class="bento-tile__meta">ARCH</span>
+              <h3 class="bento-tile__title">Modelagem de Sistemas / Programação de Aplicativos</h3>
+              <p class="bento-tile__desc">Diagramas UML e Arquitetura de Sistemas.</p>
+            </div>
+          </div>
+          <div class="bento-tile bento-tile--col-4" data-subject="bancoDeDados">
+            <div class="bento-tile__emoji">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <div class="bento-tile__info">
+              <span class="bento-tile__meta">DATA</span>
+              <h3 class="bento-tile__title">Banco de Dados / Desenvolvimento de Sistemas</h3>
+              <p class="bento-tile__desc">SQL, NoSQL e Arquitetura Relacional.</p>
+            </div>
+          </div>
+          <div class="bento-tile bento-tile--col-4" data-subject="iot">
             <div class="bento-tile__emoji">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
@@ -227,34 +255,6 @@
               <span class="bento-tile__meta">TECH</span>
               <h3 class="bento-tile__title">IoT</h3>
               <p class="bento-tile__desc">Internet das Coisas e Computação em Nuvem.</p>
-            </div>
-          </div>
-          <div class="bento-tile bento-tile--span-2" data-subject="modelagem">
-            <div class="bento-tile__emoji">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="3" y1="9" x2="21" y2="9"></line>
-                <line x1="9" y1="21" x2="9" y2="9"></line>
-              </svg>
-            </div>
-            <div class="bento-tile__info">
-              <span class="bento-tile__meta">ARCH</span>
-              <h3 class="bento-tile__title">Modelagem</h3>
-              <p class="bento-tile__desc">Diagramas UML e Arquitetura de Sistemas.</p>
-            </div>
-          </div>
-          <div class="bento-tile" data-subject="bancoDeDados">
-            <div class="bento-tile__emoji">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
-                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-              </svg>
-            </div>
-            <div class="bento-tile__info">
-              <span class="bento-tile__meta">DATA</span>
-              <h3 class="bento-tile__title">Bancos de Dados</h3>
-              <p class="bento-tile__desc">SQL, NoSQL e Arquitetura Relacional.</p>
             </div>
           </div>
         </div>

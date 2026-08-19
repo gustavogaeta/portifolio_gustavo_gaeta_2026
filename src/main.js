@@ -166,34 +166,36 @@ function setupOverlay() {
 // ============ SUBJECT RENDERING ============
 
 const subjectMap = {
-  matematica: 'Matemática',
-  natureza: 'Ciências da Natureza',
-  humanas: 'Ciências Humanas',
-  linguagens: 'Linguagens',
-  modelagem: 'Modelagem de Sistemas',
-  bancoDeDados: 'Banco de Dados',
-  iot: 'IoT'
+  matematica: { default: 'Matemática' },
+  natureza: { default: 'Ciências da Natureza' },
+  humanas: { default: 'Ciências Humanas' },
+  linguagens: { default: 'Linguagens' },
+  modelagem: { '1': 'Modelagem de Sistemas', '2': 'Programação de Aplicativos', '3': 'Programação de Aplicativos', default: 'Modelagem de Sistemas' },
+  bancoDeDados: { '1': 'Banco de Dados', '2': 'Desenvolvimento de Sistemas', '3': 'Desenvolvimento de Sistemas', default: 'Banco de Dados' },
+  iot: { default: 'IoT' }
 };
 
+function getSubjectTitle(subject, trimester = '1') {
+  const item = subjectMap[subject];
+  if (!item) return subject;
+  if (typeof item === 'string') return item;
+  return item[trimester] || item.default || subject;
+}
+
 function renderSubjectContent(subject) {
-  const title = subjectMap[subject] || subject;
+  const title = getSubjectTitle(subject, '1');
   return `
     <div class="subject-page">
       <div class="page-header">
         <h2 class="page-heading">${title}</h2>
-        <p class="page-description">Explorando conquistas e habilidades técnicas.</p>
       </div>
       <div class="trimester-selector-container">
         <div class="trimester-selector">
           <span class="selector-label">TRIMESTRE</span>
           <div class="selector-buttons">
             <button class="trimester-btn active" data-trimester="1">1º</button>
-            <button class="trimester-btn locked" data-trimester="2" data-tooltip="Ainda não é o 2º trimestre">
+            <button class="trimester-btn" data-trimester="2" data-tooltip="Ainda não é o 2º trimestre">
               2º
-              <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
             </button>
             <button class="trimester-btn locked" data-trimester="3" data-tooltip="Ainda não é o 3º trimestre">
               3º
@@ -266,6 +268,10 @@ function setupTrimesterButtons(subject, container) {
       }
       btns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      const heading = container.querySelector('.page-heading');
+      if (heading) {
+        heading.textContent = getSubjectTitle(subject, btn.dataset.trimester);
+      }
       const grid = container.querySelector('#activities-grid');
       if (grid) {
         grid.style.opacity = '0';
